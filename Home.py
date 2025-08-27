@@ -1,7 +1,7 @@
 import streamlit as st
 
 # ================== Título ==================
-st.markdown('<p style="font-size:32px; font-weight:bold; color:#facc15;">👋 Olá! Bem-vindo(a) ao meu Dashboard Profissional</p>', unsafe_allow_html=True)
+st.markdown('<p style="font-size:32px; font-weight:bold; color:#facc15;">👋 Bem-vindo ao Dashboard de Vinicius Wince</p>', unsafe_allow_html=True)
 
 # Cartão de perfil
 st.markdown("""
@@ -13,7 +13,7 @@ st.markdown("""
     <p style="font-size:24px; font-weight:600; background: linear-gradient(90deg, #06b6d4, #22c55e);
               -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Vinicius dos Santos Wince</p>
     <p><b>Desenvolvedor Back-end</b></p>
-    <p>Estudante de Engenharia de Software (FIAP) focado em back-end..</p>
+    <p>Estudante de Engenharia de Software (FIAP) focado em back-end.</p>
 </div>
 """, unsafe_allow_html=True)
 
