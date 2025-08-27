@@ -4,6 +4,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
 
+uploaded_file = st.file_uploader("📤 Faça upload do arquivo Tabela_Homic.csv", type="csv")
+if uploaded_file is not None:
+    df = pd.read_csv(uploaded_file, sep=";")
+    df.columns = ["cod", "estado", "ano", "homicidios"]
+else:
+    st.info("📝 Aguardando upload do arquivo...")
+    st.stop()
+
 # ================== Carregar dados ==================
 df = pd.read_csv("D:\CP_Dados\Tabela_Homic.csv", sep=";")
 df.columns = ["cod", "estado", "ano", "homicidios"]
