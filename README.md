@@ -31,61 +31,38 @@ Os dados de homicídios foram obtidos no **IpeaData** (Instituto de Pesquisa Eco
 ## 🧮 Cálculos Realizados
 
 ### 1. Conversão para **taxa por 100 mil habitantes**
-A normalização dos homicídios foi feita com base em uma **população fixa de referência** (IBGE), garantindo comparabilidade entre estados:
-
-```python
-populacao = {"SP": 44411238, "MG": 20539989, "RJ": 16055174}
-```
-
-A taxa foi calculada como:
-
-\[
-\text{taxa\_100k} = \frac{\text{homicidios}}{\text{populacao}} \times 100000
-\]
+O número de homicídios foi convertido em **taxa por 100 mil habitantes**, utilizando a população atual de cada estado como base de referência. Isso garante comparabilidade entre estados com tamanhos populacionais diferentes.  
 
 ---
 
 ### 2. Estatísticas descritivas
-Foram calculadas para cada estado:
+Para cada estado, foram calculados indicadores como:  
 - **Média**  
 - **Mediana**  
 - **Desvio padrão**  
-- **Mínimo e máximo**  
+- **Valores mínimo e máximo**  
 
 ---
 
 ### 3. Intervalos de confiança (95%)
-Utilizou-se a estatística **t de Student**:
-
-```python
-stats.t.interval(0.95, n-1, loc=media, scale=erro_padrao)
-```
-
-Permitindo estimar o intervalo em que a **verdadeira taxa média** de homicídios se encontra com 95% de confiança.
+Com base nas estatísticas amostrais, foram estimados **intervalos de confiança de 95%** para as taxas médias de homicídio de cada estado. Isso permite avaliar a incerteza associada às estimativas.  
 
 ---
 
 ### 4. Testes de hipótese
-Foram aplicados **testes t de Student** (independentes, variâncias diferentes) para verificar diferenças estatisticamente significativas entre estados:
-
-\[
-H_0: \mu_{estado1} = \mu_{estado2}
-\]
-
-\[
-H_1: \mu_{estado1} \neq \mu_{estado2}
-\]
-
-Critério: **p < 0.05** → rejeita-se a hipótese nula.
+Foram realizados **testes estatísticos** para verificar se as diferenças entre as taxas médias de homicídio dos estados eram significativas.  
+- Hipótese nula: não existe diferença entre os estados.  
+- Hipótese alternativa: existe diferença entre os estados.  
+- Critério: valores de p inferiores a 0,05 indicam diferença estatisticamente significativa.  
 
 ---
 
 ## 📈 Principais Resultados
 
-- **RJ** apresenta consistentemente **maiores taxas médias de homicídios** no período.  
-- **SP** possui os **menores valores** e maior estabilidade.  
-- O **teste de hipótese confirma** que as taxas de homicídio do RJ são **estatisticamente maiores que as de SP**.  
-- MG ocupa posição intermediária entre os dois estados.  
+- **Rio de Janeiro (RJ)** apresenta consistentemente as **maiores taxas médias de homicídios** no período analisado.  
+- **São Paulo (SP)** possui os **menores valores**, além de maior estabilidade ao longo do tempo.  
+- Os **testes de hipótese confirmam** que as taxas de homicídio do RJ são significativamente maiores que as de SP.  
+- **Minas Gerais (MG)** aparece em posição intermediária, variando entre os dois extremos.  
 
 ---
 
@@ -95,30 +72,3 @@ Critério: **p < 0.05** → rejeita-se a hipótese nula.
    ```bash
    git clone https://github.com/seu-usuario/seu-repo.git
    cd seu-repo
-   ```
-
-2. Instale as dependências:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Rode a aplicação Streamlit:
-   ```bash
-   streamlit run Home.py
-   ```
-
----
-
-## 🛠️ Tecnologias Utilizadas
-- **Python 3.9+**  
-- **Streamlit** → criação da aplicação interativa  
-- **Pandas / NumPy** → manipulação e análise de dados  
-- **Matplotlib / Altair** → visualizações gráficas  
-- **SciPy** → cálculos estatísticos  
-
----
-
-## 📌 Conclusão
-
-Este dashboard fornece uma visão clara e interativa sobre a **violência letal** nos estados analisados.  
-A análise confirma desigualdades regionais e evidencia a importância de políticas públicas voltadas para a redução de homicídios, especialmente no Rio de Janeiro.  
