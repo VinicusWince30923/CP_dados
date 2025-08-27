@@ -64,11 +64,3 @@ Foram realizados **testes estatísticos** para verificar se as diferenças entre
 - Os **testes de hipótese confirmam** que as taxas de homicídio do RJ são significativamente maiores que as de SP.  
 - **Minas Gerais (MG)** aparece em posição intermediária, variando entre os dois extremos.  
 
----
-
-## 🚀 Como Executar o Projeto
-
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/seu-repo.git
-   cd seu-repo
